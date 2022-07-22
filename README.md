@@ -1,8 +1,8 @@
 # Expense Reimbursement API
 This is a REST API for an expense reimbursement system.   
 
-#Technologies Used
-<img src=https://seeklogo.com/images/J/java-logo-7F8B35BAB3-seeklogo.com.png width="60">  <img src="https://spring-petclinic.github.io/images/logo-spring.png" width="60"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1985px-Postgresql_elephant.svg.png" width="60"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/768px-Amazon_Web_Services_Logo.svg.png?20170912170050" width="60">
+# Technologies Used
+<img src=https://seeklogo.com/images/J/java-logo-7F8B35BAB3-seeklogo.com.png width="60">  <img src="https://spring-petclinic.github.io/images/logo-spring.png" width="60"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1985px-Postgresql_elephant.svg.png" width="60"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/768px-Amazon_Web_Services_Logo.svg.png?20170912170050" width="60">   
 
 ## Routes
 
