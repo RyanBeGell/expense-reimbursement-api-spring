@@ -12,11 +12,13 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Expense {
-    private int expenseId;
+
     @Setter(AccessLevel.NONE)   //stop the lombok @data from auto-generating this setter
     private double amount;
+
+    private int expenseId;
     private int empId;
-    private String approval = "pending";    //new expenses are pending by default
+    private String approval = "pending";    //new expenses are pending upon creation
     private long expenseDate;
     private String expenseDescription;
 
