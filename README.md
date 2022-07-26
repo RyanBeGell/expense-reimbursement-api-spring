@@ -2,7 +2,7 @@
 This is a REST API for an expense reimbursement system.   
 
 # Technologies Used
-<img src=https://seeklogo.com/images/J/java-logo-7F8B35BAB3-seeklogo.com.png alt="Java logo" width="60">  <img src="https://spring-petclinic.github.io/images/logo-spring.png" alt="Spring logo" width="60"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1985px-Postgresql_elephant.svg.png" alt="PostgreSQL logo" width="60"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/768px-Amazon_Web_Services_Logo.svg.png?20170912170050" alt="AWS logo" width="60">   
+<img src=https://seeklogo.com/images/J/java-logo-7F8B35BAB3-seeklogo.com.png alt="Java logo" width="60">  <img src="https://spring.io/images/spring-initializr-4291cc0115eb104348717b82161a81de.svg" alt="Spring logo" width="60"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1985px-Postgresql_elephant.svg.png" alt="PostgreSQL logo" width="60"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/768px-Amazon_Web_Services_Logo.svg.png?20170912170050" alt="AWS logo" width="60">   
 
 ## Routes
 
