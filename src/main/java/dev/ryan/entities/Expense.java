@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class Expense {
 
-    @Setter(AccessLevel.NONE)   //stop the lombok @data from auto-generating this setter
+    @Setter(AccessLevel.NONE)   //stop the lombok @Setter from auto-generating this setter
     private double amount;
 
     private int expenseId;
