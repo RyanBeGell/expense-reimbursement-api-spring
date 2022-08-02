@@ -9,11 +9,11 @@ public interface ExpenseService {
 
     Expense retrieveExpenseByExpenseId(int id);
 
-    boolean approveExpense(Expense expense);
+    void approveExpense(Expense expense);
 
-    boolean denyExpense(Expense expense);
+    void denyExpense(Expense expense);
 
-    Boolean deleteExpenseById(int id);
+    void deleteExpenseById(int id);
 
     Expense replaceExpense(Expense expense);
 

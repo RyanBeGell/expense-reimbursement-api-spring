@@ -33,7 +33,7 @@ public class ExpenseServiceImpl implements ExpenseService {
     }
 
     @Override
-    public boolean approveExpense(Expense expense) {
+    public void approveExpense(Expense expense) {
 
         //check if expense is pending, if not throw exception. Approved/denied expenses can not be updated or deleted.
         if(expense.getApproval().equals("approved") || expense.getApproval().equals("denied")) {
@@ -41,30 +41,27 @@ public class ExpenseServiceImpl implements ExpenseService {
         } else {
             expense.setApproval("approved");
             this.expenseRepo.save(expense);
-            return true;
         }
     }
 
     @Override
-    public boolean denyExpense(Expense expense) {
+    public void denyExpense(Expense expense) {
         //Check is expense is pending, only pending expenses can be changed
         if(!this.retrieveExpenseByExpenseId(expense.getExpenseId()).getApproval().equals("pending")){
             throw new ImmutableExpenseException(expense.getExpenseId());
         } else {
             expense.setApproval("denied");
             this.expenseRepo.save(expense);
-            return true;
         }
     }
 
     @Override
-    public Boolean deleteExpenseById(int id) {
+    public void deleteExpenseById(int id) {
         //check if expense is pending before allowing deletion
         if(!this.retrieveExpenseByExpenseId(id).getApproval().equals("pending")){
             throw new ImmutableExpenseException(id);
         } else {
             this.expenseRepo.delete(this.retrieveExpenseByExpenseId(id));
-            return true;
         }
     }
 
