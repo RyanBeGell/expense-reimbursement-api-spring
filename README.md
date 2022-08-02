@@ -35,5 +35,3 @@ This is a REST API for an expense reimbursement system.
     - returns a 404 if car not found
 - GET /employees/120/expenses
     - returns expenses for employee 120
-- POST /employees/120/expenses
-    - adds an expense to employee 120
