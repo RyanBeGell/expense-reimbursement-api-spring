@@ -37,23 +37,23 @@ public class ExpenseController {
 
     @GetMapping("/expenses/{id}")
     public Expense getExpenseById(@PathVariable int id){
-        return expenseService.retrieveExpenseByExpenseId(id);
+        return expenseService.getExpenseByExpenseId(id);
     }
 
     @PutMapping("/expenses/{id}")
     public Expense replaceExpenseById(@PathVariable int id){
-        return expenseService.replaceExpense(expenseService.retrieveExpenseByExpenseId(id));
+        return expenseService.replaceExpense(expenseService.getExpenseByExpenseId(id));
     }
 
     @PatchMapping("/expenses/{id}/approve")
     public String approveExpense(@PathVariable int id){
-        expenseService.approveExpense(expenseService.retrieveExpenseByExpenseId(id));
+        expenseService.approveExpense(expenseService.getExpenseByExpenseId(id));
         return("Expense #" + id + "has been approved.");
     }
 
     @PatchMapping("/expenses/{id}/deny")
     public String denyExpense(@PathVariable int id){
-        expenseService.denyExpense(expenseService.retrieveExpenseByExpenseId(id));
+        expenseService.denyExpense(expenseService.getExpenseByExpenseId(id));
         return("Expense #" + id + "has been denied.");
     }
 

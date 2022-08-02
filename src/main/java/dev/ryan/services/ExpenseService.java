@@ -7,13 +7,13 @@ public interface ExpenseService {
 
     Expense registerNewExpense(Expense expense);
 
-    Expense retrieveExpenseByExpenseId(int id);
+    Expense getExpenseByExpenseId(int id);
 
-    void approveExpense(Expense expense);
+    boolean approveExpense(Expense expense);
 
-    void denyExpense(Expense expense);
+    boolean denyExpense(Expense expense);
 
-    void deleteExpenseById(int id);
+    boolean deleteExpenseById(int id);
 
     Expense replaceExpense(Expense expense);
 
