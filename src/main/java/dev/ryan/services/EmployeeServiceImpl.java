@@ -38,9 +38,8 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public boolean deleteEmployeeById(int id) {
+    public void deleteEmployeeById(int id) {
             // return true if deleted, otherwise exception would already be thrown if not found.
             employeeRepo.delete(this.getEmployeeById(id));
-            return true;
     }
 }
