@@ -1,18 +1,22 @@
 package dev.ryan.services;
 
 import dev.ryan.entities.Employee;
+import dev.ryan.entities.Role;
+
 import java.util.List;
 
 public interface EmployeeService {
 
-    Employee registerNewEmployee(Employee employee);
+    Employee saveEmployee(Employee employee);
+
+    Role saveRole(Role role);
+
+    void addRoleToUser(String username, String roleName);
 
     List<Employee> getAllEmployees();
 
-    Employee getEmployeeById(int ID);
+    Employee getEmployeeById(long id);
 
-    Employee replaceEmployee(Employee employee);
-
-    void deleteEmployeeById(int id);
+    void deleteEmployeeById(long id);
 
 }
