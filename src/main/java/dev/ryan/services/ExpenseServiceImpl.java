@@ -3,7 +3,7 @@ package dev.ryan.services;
 import dev.ryan.exceptions.ImmutableExpenseException;
 import dev.ryan.repos.ExpenseRepo;
 import dev.ryan.entities.Expense;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -11,14 +11,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-@Service
+@Service @RequiredArgsConstructor
 public class ExpenseServiceImpl implements ExpenseService {
 
-    @Autowired
-    private ExpenseRepo expenseRepo;
+    private final ExpenseRepo expenseRepo;
 
     @Override
-    public Expense registerNewExpense(Expense expense) {
+    public Expense saveExpense(Expense expense) {
         return expenseRepo.save(expense);
     }
 
@@ -65,16 +64,6 @@ public class ExpenseServiceImpl implements ExpenseService {
         } else {
             this.expenseRepo.delete(this.getExpenseByExpenseId(id));
             return true;
-        }
-    }
-
-    @Override
-    public Expense replaceExpense(Expense expense) {
-        //check if expense is pending before allowing it to be changed
-        if (!expense.getApproval().equals("pending")){
-            throw new ImmutableExpenseException(expense.getExpenseId());
-        } else {
-            return expenseRepo.save(expense);
         }
     }
 
