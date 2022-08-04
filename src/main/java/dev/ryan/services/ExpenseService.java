@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface ExpenseService {
 
-    Expense registerNewExpense(Expense expense);
+    Expense saveExpense(Expense expense);
 
     Expense getExpenseByExpenseId(int id);
 
@@ -14,8 +14,6 @@ public interface ExpenseService {
     boolean denyExpense(Expense expense);
 
     boolean deleteExpenseById(int id);
-
-    Expense replaceExpense(Expense expense);
 
     List<Expense> getAllExpensesByEmployeeId(int id);
 
