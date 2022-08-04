@@ -2,6 +2,7 @@ package dev.ryan.controllers;
 
 import dev.ryan.entities.Expense;
 import dev.ryan.services.ExpenseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,14 +10,14 @@ import java.util.List;
 
 @RestController
 @CrossOrigin("*")
+@RequiredArgsConstructor
 public class ExpenseController {
 
-    @Autowired
-    private ExpenseService expenseService;
+    private final ExpenseService expenseService;
 
     @PostMapping("/expenses")
-    public Expense createEmployee(@RequestBody Expense expense){
-        return expenseService.registerNewExpense(expense);
+    public Expense saveExpense(@RequestBody Expense expense){
+        return expenseService.saveExpense(expense);
     }
 
     @GetMapping("/expenses")
@@ -38,11 +39,6 @@ public class ExpenseController {
     @GetMapping("/expenses/{id}")
     public Expense getExpenseById(@PathVariable int id){
         return expenseService.getExpenseByExpenseId(id);
-    }
-
-    @PutMapping("/expenses/{id}")
-    public Expense replaceExpenseById(@PathVariable int id){
-        return expenseService.replaceExpense(expenseService.getExpenseByExpenseId(id));
     }
 
     @PatchMapping("/expenses/{id}/approve")
