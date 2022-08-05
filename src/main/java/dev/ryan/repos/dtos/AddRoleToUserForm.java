@@ -1,4 +1,4 @@
-package dev.ryan.dtos;
+package dev.ryan.repos.dtos;
 
 import lombok.Getter;
 import lombok.Setter;
