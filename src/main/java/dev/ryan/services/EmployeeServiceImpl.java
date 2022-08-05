@@ -2,12 +2,12 @@ package dev.ryan.services;
 
 import dev.ryan.entities.Employee;
 import dev.ryan.entities.Role;
+import dev.ryan.exceptions.ResourceNotFoundException;
 import dev.ryan.repos.EmployeeRepo;
 import dev.ryan.repos.RoleRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
@@ -35,6 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         Employee employee = employeeRepo.findByUsername(username);
         Role role = roleRepo.findByName(roleName);
         employee.getRoles().add(role);
+        //employeeRepo.save(employee);
     }
 
     @Override
@@ -49,7 +50,7 @@ public class EmployeeServiceImpl implements EmployeeService{
         if(possibleEmployee.isPresent()){
             return possibleEmployee.get();
         } else{
-            throw new EntityNotFoundException("Employee with id #" + id +"not found.");
+            throw new ResourceNotFoundException("Employee with id #" + id +"not found.");
         }
     }
 
