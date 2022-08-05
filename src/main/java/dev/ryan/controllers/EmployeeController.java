@@ -1,6 +1,6 @@
 package dev.ryan.controllers;
 
-import dev.ryan.dtos.AddRoleToUserForm;
+import dev.ryan.repos.dtos.AddRoleToUserForm;
 import dev.ryan.entities.Employee;
 import dev.ryan.entities.Role;
 import dev.ryan.services.EmployeeService;
