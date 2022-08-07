@@ -19,6 +19,8 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String username;
+
+    @Column(length = 60) //To allow for Bcrypt hashing
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER)
