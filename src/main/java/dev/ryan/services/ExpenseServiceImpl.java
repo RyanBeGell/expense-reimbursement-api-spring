@@ -5,6 +5,7 @@ import dev.ryan.exceptions.ResourceNotFoundException;
 import dev.ryan.repos.ExpenseRepo;
 import dev.ryan.entities.Expense;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.List;
@@ -12,11 +13,11 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
 public class ExpenseServiceImpl implements ExpenseService {
 
-    private final ExpenseRepo expenseRepo;
+    @Autowired
+    private ExpenseRepo expenseRepo;
 
     @Override
     public Expense saveExpense(Expense expense) {

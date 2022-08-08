@@ -19,6 +19,9 @@ public class Employee {
     private String lastName;
     private String username;
 
+    @Column(length = 60)
+    private String password;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 }

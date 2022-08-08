@@ -5,6 +5,8 @@ import dev.ryan.entities.Role;
 import dev.ryan.exceptions.ResourceNotFoundException;
 import dev.ryan.repos.EmployeeRepo;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -12,14 +14,18 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
 public class EmployeeServiceImpl implements EmployeeService{
 
-    private final EmployeeRepo employeeRepo;
+    @Autowired
+    private EmployeeRepo employeeRepo;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public Employee saveEmployee(Employee employee) {
+        employee.setPassword(passwordEncoder.encode(employee.getPassword()));
         return employeeRepo.save(employee);
     }
 
