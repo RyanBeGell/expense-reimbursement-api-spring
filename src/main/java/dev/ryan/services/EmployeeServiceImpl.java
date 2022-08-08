@@ -1,10 +1,9 @@
 package dev.ryan.services;
 
 import dev.ryan.entities.Employee;
-import dev.ryan.entities.Role;
+import dev.ryan.config.Role;
 import dev.ryan.exceptions.ResourceNotFoundException;
 import dev.ryan.repos.EmployeeRepo;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

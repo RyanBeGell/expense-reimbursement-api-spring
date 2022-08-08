@@ -1,7 +1,7 @@
 package dev.ryan.services;
 
 import dev.ryan.entities.Employee;
-import dev.ryan.entities.Role;
+import dev.ryan.config.Role;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package dev.ryan.dtos;
 
-import dev.ryan.entities.Role;
+import dev.ryan.config.Role;
 import lombok.Getter;
 import lombok.Setter;
 

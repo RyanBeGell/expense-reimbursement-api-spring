@@ -1,4 +1,4 @@
-package dev.ryan.entities;
+package dev.ryan.config;
 
 public enum Role {
     ADMIN,

@@ -1,5 +1,6 @@
 package dev.ryan.entities;
 
+import dev.ryan.config.Role;
 import lombok.*;
 
 import javax.persistence.*;
