@@ -3,9 +3,6 @@ package dev.ryan.entities;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-
 import static javax.persistence.GenerationType.AUTO;
 
 @Getter
@@ -14,16 +11,14 @@ import static javax.persistence.GenerationType.AUTO;
 @NoArgsConstructor
 @Entity
 public class Employee {
-    @Id @GeneratedValue(strategy = AUTO)
+
+    @Id
+    @GeneratedValue(strategy = AUTO)
     private long id;
     private String firstName;
     private String lastName;
     private String username;
 
-    @Column(length = 60) //To allow for Bcrypt hashing
-    private String password;
-
-    @ManyToMany(fetch = FetchType.EAGER)
-    private List<Role> roles = new ArrayList<>();
-
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }

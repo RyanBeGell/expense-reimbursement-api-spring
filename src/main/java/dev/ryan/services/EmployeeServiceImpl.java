@@ -4,7 +4,6 @@ import dev.ryan.entities.Employee;
 import dev.ryan.entities.Role;
 import dev.ryan.exceptions.ResourceNotFoundException;
 import dev.ryan.repos.EmployeeRepo;
-import dev.ryan.repos.RoleRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +17,6 @@ import java.util.Optional;
 public class EmployeeServiceImpl implements EmployeeService{
 
     private final EmployeeRepo employeeRepo;
-    private final RoleRepo roleRepo;
 
     @Override
     public Employee saveEmployee(Employee employee) {
@@ -26,16 +24,10 @@ public class EmployeeServiceImpl implements EmployeeService{
     }
 
     @Override
-    public Role saveRole(Role role) {
-        return roleRepo.save(role);
-    }
-
-    @Override
-    public void addRoleToUser(String username, String roleName) {
+    public void addRoleToUser(String username, Role role) {
         Employee employee = employeeRepo.findByUsername(username);
-        Role role = roleRepo.findByName(roleName);
-        employee.getRoles().add(role);
-        //employeeRepo.save(employee);
+        employee.setRole(role);
+        employeeRepo.save(employee);
     }
 
     @Override

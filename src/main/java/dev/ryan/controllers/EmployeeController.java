@@ -1,8 +1,7 @@
 package dev.ryan.controllers;
 
-import dev.ryan.repos.dtos.AddRoleToUserForm;
+import dev.ryan.dtos.AddRoleToUserForm;
 import dev.ryan.entities.Employee;
-import dev.ryan.entities.Role;
 import dev.ryan.services.EmployeeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -42,16 +41,11 @@ public class EmployeeController {
         return ("Employee #" + id + "successfully deleted.");
     }
 
-    @PostMapping("/role/save")
-    @ResponseStatus(code = HttpStatus.CREATED)
-    public Role saveRole(@RequestBody Role role){
-        return employeeService.saveRole(role);
-    }
 
     @PostMapping("/role/addToUser")
     @ResponseStatus(code = HttpStatus.OK)
     public void addRoleToUser(@RequestBody AddRoleToUserForm form){
-        employeeService.addRoleToUser(form.getUsername(), form.getRoleName());
+        employeeService.addRoleToUser(form.getUsername(), form.getRole());
     }
 
 }

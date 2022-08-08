@@ -1,5 +1,6 @@
-package dev.ryan.repos.dtos;
+package dev.ryan.dtos;
 
+import dev.ryan.entities.Role;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,5 +9,5 @@ import lombok.Setter;
 public
 class AddRoleToUserForm {
     private String username;
-    private String roleName;
+    private Role role;
 }

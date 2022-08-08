@@ -9,9 +9,7 @@ public interface EmployeeService {
 
     Employee saveEmployee(Employee employee);
 
-    Role saveRole(Role role);
-
-    void addRoleToUser(String username, String roleName);
+    void addRoleToUser(String username, Role role);
 
     List<Employee> getAllEmployees();
 
