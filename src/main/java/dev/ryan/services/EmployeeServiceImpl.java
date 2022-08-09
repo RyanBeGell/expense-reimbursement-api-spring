@@ -1,11 +1,9 @@
 package dev.ryan.services;
 
 import dev.ryan.entities.Employee;
-import dev.ryan.config.Role;
 import dev.ryan.exceptions.ResourceNotFoundException;
 import dev.ryan.repos.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -19,20 +17,9 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Autowired
     private EmployeeRepo employeeRepo;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
     @Override
     public Employee saveEmployee(Employee employee) {
-        employee.setPassword(passwordEncoder.encode(employee.getPassword()));
         return employeeRepo.save(employee);
-    }
-
-    @Override
-    public void addRoleToUser(String username, Role role) {
-        Employee employee = employeeRepo.findByUsername(username);
-        employee.setRole(role);
-        employeeRepo.save(employee);
     }
 
     @Override

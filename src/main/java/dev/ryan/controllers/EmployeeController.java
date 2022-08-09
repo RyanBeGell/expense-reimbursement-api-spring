@@ -1,6 +1,5 @@
 package dev.ryan.controllers;
 
-import dev.ryan.dtos.AddRoleToUserForm;
 import dev.ryan.entities.Employee;
 import dev.ryan.services.EmployeeService;
 import lombok.RequiredArgsConstructor;
@@ -39,13 +38,6 @@ public class EmployeeController {
     public String deleteEmployee(@PathVariable int id){
         employeeService.deleteEmployeeById(id);
         return ("Employee #" + id + "successfully deleted.");
-    }
-
-
-    @PostMapping("/role/addToUser")
-    @ResponseStatus(code = HttpStatus.OK)
-    public void addRoleToUser(@RequestBody AddRoleToUserForm form){
-        employeeService.addRoleToUser(form.getUsername(), form.getRole());
     }
 
 }
