@@ -5,22 +5,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.AccessLevel;
+import javax.persistence.*;
 import java.util.Date;
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
+@Table(name="expense")
 public class Expense {
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+    private int expenseId;
+    private String approval = "pending";    //new expenses are pending upon creation
+    private long expenseDate;
+    private String expenseDescription;
 
     @Setter(AccessLevel.NONE)   //stop the lombok @Setter from auto-generating this setter
     private double amount;
 
-    private int expenseId;
+    @OneToOne
+    @JoinColumn(name="id")
     private int empId;
-    private String approval = "pending";    //new expenses are pending upon creation
-    private long expenseDate;
-    private String expenseDescription;
 
     //Constructor with some args (approval status & date auto generated);
     public Expense(int expenseId, double amount, int empId, String expenseDescription) {
